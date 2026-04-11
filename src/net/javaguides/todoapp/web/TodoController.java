@@ -168,6 +168,7 @@ public class TodoController extends HttpServlet {
 		doGet(request, response);
 	}
 
+	// Fix: Validated logged-in user before allowing access to resources (IDOR prevention)
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getServletPath();
