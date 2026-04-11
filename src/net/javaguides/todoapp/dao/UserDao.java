@@ -73,6 +73,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import net.javaguides.todoapp.model.User;
 import net.javaguides.todoapp.utils.JDBCUtils;
 
+// Fix: Passwords are hashed before storing in database
 public class UserDao {
 	public int registerEmployee(User user) throws ClassNotFoundException {
 		String hashed = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
