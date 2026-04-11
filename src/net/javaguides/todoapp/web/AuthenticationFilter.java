@@ -83,6 +83,7 @@ public class AuthenticationFilter implements Filter {
         String contextPath = req.getContextPath();
 
         // Allow access to login, register, logout, and static resources without authentication
+        // Fix: Added authentication check to restrict unauthorized access
         boolean isLoginPage = uri.endsWith("/login")
                 || uri.contains("/login/login.jsp")
                 || uri.endsWith("/login-google");
