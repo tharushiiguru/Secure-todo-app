@@ -86,7 +86,7 @@ public class AuthenticationFilter implements Filter {
         // Fix: Added authentication check to restrict unauthorized access
         boolean isLoginPage = uri.endsWith("/login")
                 || uri.contains("/login/login.jsp")
-                || uri.endsWith("/login-google");
+                || uri.endsWith("/login-google"); // Fix: Allowed OAuth endpoint to bypass authentication filter
         boolean isRegisterPage = uri.endsWith("/register") || uri.contains("/register/register.jsp");
         boolean isLogout = uri.endsWith("/logout");
         boolean isStaticResource = uri.contains(".css") || uri.contains(".js") || uri.contains(".jpg") || uri.contains(".png");
