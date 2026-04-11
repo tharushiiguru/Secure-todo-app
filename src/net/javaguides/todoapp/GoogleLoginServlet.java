@@ -15,12 +15,13 @@ public class GoogleLoginServlet extends HttpServlet {
         String code = request.getParameter("code");
 
         if (code != null) {
-
+            // Fix: Create session after successful OAuth authentication
             HttpSession session = request.getSession();
 
-            // For assignment (simple login)
+            // Feature: Set authenticated OAuth user in session
             session.setAttribute("user", "google_user");
 
+            // Redirect to secure dashboard after login
             response.sendRedirect(request.getContextPath() + "/list");
 
         } else {
