@@ -32,6 +32,7 @@
 
 			<button type="submit" class="btn btn-primary">Submit</button>
 
+			<%-- Feature: Added Google OAuth login button to enable third-party authentication --%>
 			<hr>
 
 			<a href="https://accounts.google.com/o/oauth2/v2/auth?
