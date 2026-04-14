@@ -265,6 +265,7 @@ public class TodoDaoImpl implements TodoDao {
 	private static final String UPDATE_TODO_BY_ID_AND_USER = "UPDATE todos SET title = ?, description = ?, target_date = ?, is_done = ? WHERE id = ? AND username = ?";
 
 	@Override
+	// Fix: Prevented SQL Injection by using PreparedStatement instead of dynamic SQL queries
 	public void insertTodo(Todo todo) throws SQLException {
 		try (Connection connection = JDBCUtils.getConnection();
 			 PreparedStatement pstmt = connection.prepareStatement(INSERT_TODOS_SQL)) {

@@ -116,7 +116,7 @@ import net.javaguides.todoapp.model.LoginBean;
 import net.javaguides.todoapp.utils.JDBCUtils;
 
 public class LoginDao {
-
+	// Fix: Prevented SQL Injection by using PreparedStatement instead of dynamic SQL queries
 	public boolean validate(LoginBean loginBean) throws ClassNotFoundException {
 		String username = loginBean.getUsername();
 		String password = loginBean.getPassword();
