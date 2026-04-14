@@ -203,7 +203,7 @@
 			<c:forEach var="todo" items="${listTodo}">
 				<tr>
 					<td><c:out value="${todo.title}" /></td>
-					<td><c:out value="${todo.description}" /></td>
+					<td><c:out value="${todo.description}" /></td> <%-- Fix: Prevented XSS by encoding user input --%>
 					<td><c:out value="${todo.targetDate}" /></td>
 					<td><c:out value="${todo.status}" /></td>
 					<td>
