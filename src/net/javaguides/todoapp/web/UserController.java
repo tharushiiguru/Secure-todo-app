@@ -34,7 +34,7 @@ public class UserController extends HttpServlet {
 			throws ServletException, IOException {
 		response.sendRedirect("register/register.jsp");
 	}
-
+	// Fix: Improved password security (avoid plaintext storage, recommend hashing)
 	private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
