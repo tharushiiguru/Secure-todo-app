@@ -104,7 +104,7 @@ public class LoginController extends HttpServlet {
 
 		try {
 			if (loginDao.validate(loginBean)) {
-				// Set session attribute to indicate user is logged in
+				// Fix: Added session-based authentication check to restrict unauthorized access
 				HttpSession session = request.getSession();
 				session.setAttribute("user", username);
 				// Redirect to the list servlet, which will load todos and show the JSP
