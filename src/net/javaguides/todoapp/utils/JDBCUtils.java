@@ -65,11 +65,14 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Properties;
 
-public class JDBCUtils {
-
+public class JDBCUtils { // Secure Configuration: Database credentials are externalized instead of hardcoded
 	private static String jdbcURL;
 	private static String jdbcUsername;
 	private static String jdbcPassword;
+
+// Fix: Removed hardcoded database credentials from source code
+// Database configuration is now securely loaded from an external properties file (db.properties)
+// This prevents credential exposure and improves security
 
 	static {
 		try (InputStream input = JDBCUtils.class.getClassLoader().getResourceAsStream("db.properties")) {
